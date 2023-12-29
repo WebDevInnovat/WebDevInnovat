@@ -88,7 +88,7 @@ void ajouter_client()
     fwrite(&cl,sizeof(cl),1,fich);
     if(fwrite!=0);
      {
-         printf("\t****merci****");
+         printf("\t****merci****\n");
      }
     fclose(fich);
     }
@@ -102,7 +102,7 @@ void afficher_client()
     FILE *fich=NULL;
     fich=fopen("cl.txt","r+");
 
-    printf("******la liste de clients******\n");
+    printf("\n******la liste de clients******\n");
     printf("id_client\t nom\t     prenom\n");
     while(fread(&cl,sizeof(cl),1,fich))
     {
@@ -155,7 +155,7 @@ void supprimer_client()
                  }
                   fclose(fich1);
                   rename("cll.txt", "cl.txt");
-                  printf("le client de id_client[%d]est supprimer",numc);
+                  printf("le client de id_client[%d]est supprimer\n",numc);
 
 
 
@@ -163,7 +163,7 @@ void supprimer_client()
 
            else
            {
-            printf("le client n'exist deja!!!");
+            printf("le client n'exist deja!!!\n");
            }
      }
 
@@ -176,15 +176,14 @@ void rechercher_client()
     int numcl,x;
     printf("entrer le id_client a rechercher :\n");
     scanf("%d",&numcl);
-    if(rechcl(numcl==1))
+    if(rechcl(numcl)==1)
     {
-       printf("le client exist ");
-
+       printf("le client exist \n");
     }
     else
-           {
-            printf("le client  n'exist pas!!!");
-           }
+    {
+            printf("le client n'exist pas!!!\n");
+    }
 }
 /*----------procedure_compte----------*/
 void ajouter_compte()
@@ -216,12 +215,12 @@ void ajouter_compte()
         fwrite(&co,sizeof(co),1,fich);
         if(fwrite!=0);
         {
-         printf("\t\t****merci a choisir E-Bank****");
+         printf("\t\t****merci a choisir E-Bank****\n");
         }
         fclose(fich);
        }
        else{
-        printf("if faut faire un compte client avant");
+        printf("if faut faire un compte client avant\n");
         menu();
            }
     }
@@ -235,7 +234,7 @@ void afficher_compte()
     FILE *fich=NULL;
     fich=fopen("ba.txt","r+");
 
-    printf("******la liste de comptes******\n");
+    printf("\n******la liste de comptes******\n");
     printf(" id_client\t id_compte \t solde\n");
     while(fread(&co,sizeof(co),1,fich))
     {
@@ -282,7 +281,7 @@ void supprimer_compte()
                  }
                   fclose(fich1);
                   rename("baa.txt", "ba.txt");
-                  printf("le compte de id_compte[%d]est supprimer",numco);
+                  printf("le compte de id_compte[%d]est supprimer\n",numco);
 
 
 
@@ -436,9 +435,9 @@ void detail_operation(int numco)
 /*----------menu principal----------*/
 void menu()
 {
-  printf("\t\t\t\t\t\t------------------------------\n");
-  printf("\t\t\t\t\t\t*****Gestion d'une banque*****\n");
-  printf("\t\t\t\t\t\t------------------------------\n\n\n");
+  printf("------------------------------\n");
+  printf("*****Gestion d'une banque*****\n");
+  printf("------------------------------\n");
   printf("\t\t\t\t\t\t\t[1]client\n");
   printf("\t\t\t\t\t\t\t[2]compte\n");
   printf("\t\t\t\t\t\t\t[3]quit\n");
@@ -455,9 +454,9 @@ void menu()
 void menu_client()
 {
 
-    printf("\t\t\t\t\t\t------------------------------\n");
-  printf("\t\t\t\t\t\t\t  **client**\n");
-  printf("\t\t\t\t\t\t------------------------------\n\n");
+    printf("------------------------------\n");
+  printf("  \t\t**client**\n");
+  printf("------------------------------\n");
   printf("\t\t\t\t\t\t\t[1] :ajouter un client\n");
   printf("\t\t\t\t\t\t\t[2] :supprimer un client\n");
 
@@ -476,9 +475,9 @@ void menu_client()
 void menu_compte()
 {
 
-  printf("\t\t\t\t\t\t------------------------------\n");
-  printf("\t\t\t\t\t\t\t  **compte**\n");
-  printf("\t\t\t\t\t\t------------------------------\n\n");
+  printf("------------------------------\n");
+  printf(" \t\t **compte**\n");
+  printf("------------------------------\n");
   printf("\t\t\t\t\t\t\t[1] :Greer un nouveau compte\n");
   printf("\t\t\t\t\t\t\t[2] :supprimer un compte\n");
 
@@ -545,7 +544,7 @@ int main()
                  transaction();
                  break;
              case 5:
-                 printf("entrer le numero de compte");
+                 printf("entrer le numero de compte\n");
                 scanf("%d",&nu);
                 detail_operation(nu);
                  break;
