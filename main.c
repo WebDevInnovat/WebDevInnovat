@@ -482,7 +482,7 @@ void menu_compte()
   printf("\t\t\t\t\t\t\t[1] :Greer un nouveau compte\n");
   printf("\t\t\t\t\t\t\t[2] :supprimer un compte\n");
 
-  printf("\t\t\t\t\t\t\t[3] :affichage de detail 3 compte\n");
+  printf("\t\t\t\t\t\t\t[3] :affichage de detail  compte\n");
   printf("\t\t\t\t\t\t\t[4] :transaction(\"VERSEMENT\";\"REITRAIT\")\n");
   printf("\t\t\t\t\t\t\t[5] :detail operation d'un compte\n");
   printf("\t\t\t\t\t\t\t[6] :retour au menu principale\n\n");
